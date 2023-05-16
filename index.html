@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>spela ljuden</title>
+</head>
+<body>
+  <h1>Play Sound</h1>
+  <button id="playBtn">Play</button>
+  <button id="stopBtn" disabled>Stop</button>
+
+  <script>
+    var audio = new Audio("scary.mp3");
+    var playBtn = document.getElementById('playBtn');
+    var stopBtn = document.getElementById('stopBtn');
+
+    playBtn.addEventListener('click', function() {
+      audio.play();
+      playBtn.disabled = true;
+      stopBtn.disabled = false;
+    });
+
+    stopBtn.addEventListener('click', function() {
+      audio.pause();
+      audio.currentTime = 0;
+      playBtn.disabled = false;
+      stopBtn.disabled = true;
+    });
+  </script>
+</body>
+</html>
